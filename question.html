@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ask a Question</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -12,17 +13,20 @@
         <form id="questionForm">
             <label for="question">Your Question:</label>
             <textarea id="question" name="question" rows="4" required></textarea><br>
-            <button type="button" id="generateQuestionButton">Generate Question</button><br>
-            <button type="button" id="sendButton">Send</button>
+            <button type="submit">Send</button>
         </form>
-        <div id="shareLinkContainer" style="display:none;">
-            <p>Share this link with your friends:</p>
-            <input type="text" id="shareLink" readonly>
+        <div id="shareIcons">
+            <p>Share this link:</p>
+            <a href="#" id="whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            <!-- Add more social media icons as needed -->
         </div>
-        <button id="createYoursButton">Create Yours</button>
-        <div class="animation"></div> <!-- Animation div -->
+        <button id="generateLinkButton">Generate Your Own Link</button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="question.js"></script>
 </body>
 </html>
+
 
