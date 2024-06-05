@@ -1,44 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const generateQuestionButton = document.getElementById('generateQuestionButton');
-    const sendButton = document.getElementById('sendButton');
-    const createYoursButton = document.getElementById('createYoursButton');
-    const shareLinkContainer = document.getElementById('shareLinkContainer');
-    const shareLink = document.getElementById('shareLink');
     const questionForm = document.getElementById('questionForm');
-
-    const predefinedQuestions = [
-        "What's your favorite memory with me?",
-        "What do you think is my best quality?",
-        "What's one thing you've always wanted to ask me?",
-        "What's your favorite thing about me?",
-        "What do you think I should improve on?"
-    ];
-
-    generateQuestionButton.addEventListener('click', function() {
-        const randomQuestion = predefinedQuestions[Math.floor(Math.random() * predefinedQuestions.length)];
-        document.getElementById('question').value = randomQuestion;
+    const generateLinkButton = document.getElementById('generateLinkButton');
+    
+    // Function to share the link via various social media platforms
+    function shareLink(platform) {
+        const url = window.location.href;
+        let shareUrl = '';
+        
+        switch(platform) {
+            case 'whatsapp':
+                shareUrl = `whatsapp://send?text=${encodeURIComponent(url)}`;
+                break;
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                break;
+            case 'twitter':
+                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+                break;
+            // Add more cases for other social media platforms
+        }
+        
+        window.open(shareUrl, '_blank');
+    }
+    
+    // Event listener for sharing via social media icons
+    document.getElementById('whatsapp').addEventListener('click', function() {
+        shareLink('whatsapp');
+    });
+    
+    document.getElementById('facebook').addEventListener('click', function() {
+        shareLink('facebook');
+    });
+    
+    document.getElementById('twitter').addEventListener('click', function() {
+        shareLink('twitter');
     });
 
-    sendButton.addEventListener('click', function() {
+    // Event listener for question submission
+    questionForm.addEventListener('submit', function(event) {
+        event.preventDefault();
         const question = document.getElementById('question').value;
         if (question.trim() === "") {
             alert("Please enter a question.");
             return;
         }
 
-        const baseUrl = window.location.origin;
-        const link = `${baseUrl}/answer.html?question=${encodeURIComponent(question)}`;
-        shareLink.value = link;
-        shareLinkContainer.style.display = 'block';
+        // Here you can send the question to the author via an API or backend service
+        alert("Question sent to the author: " + question);
+
+        // Optionally, you can redirect the user to a confirmation page
+        // window.location.href = "confirmation.html";
     });
 
-    createYoursButton.addEventListener('click', function() {
-        window.location.href = 'index.html';
-    });
-
-    // Animation button redirects to create yours section
-    const animationButton = document.querySelector('.animation');
-    animationButton.addEventListener('click', function() {
-        window.location.href = '#createYoursButton';
+    // Event listener for generating own link
+    generateLinkButton.addEventListener('click', function() {
+        // Redirect the user to a page where they can generate their own link
+        window.location.href = "generate-link.html";
     });
 });
+
