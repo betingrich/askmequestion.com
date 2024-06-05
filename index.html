@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Profile</title>
+    <title>Welcome to Ask Me Anything</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Create Your Profile</h1>
-        <form id="profileForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            <label for="bio">Bio:</label>
-            <textarea id="bio" name="bio" rows="4" required></textarea><br>
-            <button type="submit">Create Profile</button>
+        <h1>Welcome to Ask Me Anything</h1>
+        <a href="profile.html" class="profile-link">Fill out your profile</a>
+        <form id="questionForm">
+            <label for="question">Ask me anything:</label>
+            <textarea id="question" name="question" rows="4" required></textarea>
+            <button type="submit">Send</button>
         </form>
+        <div id="shareIcons" class="social-icons">
+            <p>Share this link:</p>
+            <a href="#" id="whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <button id="generateLinkButton">Generate Your Own Link</button>
     </div>
-    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="question.js"></script>
 </body>
 </html>
+
