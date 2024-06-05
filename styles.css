@@ -1,43 +1,51 @@
 body {
-    background-color: #2c2c2c;
-    color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #3a3a3a;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+    font-family: 'Pacifico', cursive;
     color: #4CAF50;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="email"],
-textarea {
+input[type="tel"],
+textarea,
+select,
+button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
+    margin-bottom: 20px;
+    border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 button {
     background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -45,33 +53,63 @@ button:hover {
     background-color: #45a049;
 }
 
-#completion {
+#shareIcons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#shareIcons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+#generateLinkButton {
+    display: block;
+    width: 100%;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#generateLinkButton:hover {
+    background-color: #f57c00;
+}
+
+.profile-link {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+}
+
+#profileCompletion {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.social-icons {
+    text-align: center;
     margin-top: 20px;
 }
 
-#verified {
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
     color: #4CAF50;
-    font-weight: bold;
 }
-/* Add animation styles */
-@keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-  
-  .animation {
-    width: 50px;
-    height: 50px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    animation: bounce 1s infinite; /* Apply animation */
-    cursor: pointer;
-  }
+
+
   
